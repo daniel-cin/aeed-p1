@@ -1,9 +1,12 @@
+ALGORITMO = bubble_sort
+
 CC = gcc
 LD = gcc
 
-CFLAGS = -Wall -pipe 
+# CFLAGS = -Wall -pipe 
+LISTA_DIR = -I../listas_header/
 OFLAGS = -c -I/usr/include
-LFLAGS = $(CFLAGS) -L/usr/lib/
+LFLAGS = $(CFLAGS) -L/usr/lib/ $(LISTA_DIR) 
 
 SOURCES = $(wildcard *.c)
 OBJECTS = $(SOURCES:.c=.o)
@@ -24,16 +27,16 @@ endif
 
 CFLAGS += $(OPTIMIZATION)
 
-all: project
+all: $(ALGORITMO)
 
-project: $(OBJECTS)
-	$(CC) $(OBJECTS) $(CFLAGS) -o project
+$(ALGORITMO): $(OBJECTS)
+	$(CC) $(OBJECTS) $(CFLAGS) -o $(ALGORITMO)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -rf *.o project
+	rm -rf *.o $(ALGORITMO)
 
 rebuild: clean all
 
