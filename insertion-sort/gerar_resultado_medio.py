@@ -10,7 +10,7 @@ N_REPETICOES = 10
 rodar_algoritmos = [1,2,3,4]
 rodar_listas = [5]
 nome_artefato = "medio"
-nome_exe = "library_sort"
+nome_exe = "bubble_sort"
     
 
 ################
