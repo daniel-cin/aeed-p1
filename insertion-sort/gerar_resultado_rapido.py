@@ -10,7 +10,7 @@ N_REPETICOES = 200
 rodar_algoritmos = [1,2,3,4]
 rodar_listas = [1,2,3,4]
 nome_artefato = "rapido"
-nome_exe = "bubble_sort"
+nome_exe = "insertion_sort"
 
     
 

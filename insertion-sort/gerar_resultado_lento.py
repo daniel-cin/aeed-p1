@@ -10,7 +10,7 @@ N_REPETICOES = 10
 rodar_algoritmos = [1,2,3,4]
 rodar_listas = [6]
 nome_artefato = "lento"
-nome_exe = "bubble_sort"
+nome_exe = "insertion_sort"
     
 
 ################

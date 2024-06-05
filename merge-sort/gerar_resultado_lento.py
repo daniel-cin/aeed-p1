@@ -8,9 +8,9 @@ import numpy as np
 ################
 N_REPETICOES = 10
 rodar_algoritmos = [1,2,3,4]
-rodar_listas = [5]
-nome_artefato = "medio"
-nome_exe = "insertion_sort"
+rodar_listas = [6]
+nome_artefato = "lento"
+nome_exe = "merge_sort"
     
 
 ################
