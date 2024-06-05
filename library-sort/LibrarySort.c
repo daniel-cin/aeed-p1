@@ -146,9 +146,10 @@ int main(int argc, char *argv[])
     end = clock();
     cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
 
-    printf("\nNumero de comparacoes: %d\n", couter_comparacao);
-    printf("Numero de movimentacoes: %d\n", couter_movimentacao);
-    printf("Tempo total gasto: %.9f segundos\n", cpu_time_used);
+    printf("TEMPO=%f;", cpu_time_used);
+    printf("COMP=%u;", couter_comparacao);
+    printf("REGIS=%u", couter_movimentacao);
+    fflush(stdout);
 
     return 0;
 }

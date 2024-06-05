@@ -40,7 +40,6 @@ int *selecionarArray( int seletor_modo, int seletor_qtde)
  switch (seletor_modo)
     {
     case 1: 
-        printf("selecionar_ordenada\n");
         if (seletor_qtde==1){ return ordenada_10;}
         if (seletor_qtde==2){ return ordenada_100;}
         if (seletor_qtde==3){ return ordenada_1000;}
@@ -50,7 +49,6 @@ int *selecionarArray( int seletor_modo, int seletor_qtde)
        
         break;
     case 2:
-        printf("selecionar_inversa");
         if (seletor_qtde==1){ return inversa_10;}
         if (seletor_qtde==2){ return inversa_100;}
         if (seletor_qtde==3){ return inversa_1000;}
@@ -59,7 +57,6 @@ int *selecionarArray( int seletor_modo, int seletor_qtde)
         if (seletor_qtde==6){ return inversa_1000000;}
         break;
     case 3:
-        printf("selecionar_quase");
         if (seletor_qtde==1){ return quase_10;}
         if (seletor_qtde==2){ return quase_100;}
         if (seletor_qtde==3){ return quase_1000;}
@@ -68,7 +65,6 @@ int *selecionarArray( int seletor_modo, int seletor_qtde)
         if (seletor_qtde==6){ return quase_1000000;}
         break;
     case 4:
-        printf("selecionar_aleatoria");
         if (seletor_qtde==1){ return aleatoria_10;}
         if (seletor_qtde==2){ return aleatoria_100;}
         if (seletor_qtde==3){ return aleatoria_1000;}
