@@ -7,40 +7,57 @@
 
 // Definição dos tipos
 typedef int TChave;
+typedef struct
+{
+    TChave Chave;
+    /* outros componentes */
+} TItem;
 
 // Variáveis globais para contagem
 unsigned int couter_comparacao = 0;
 unsigned int couter_movimentacao = 0;
 
-// Função para trocar dois elementos
-void swap(TChave *xp, TChave *yp)
+////////////////
+// AUXILIARES //
+////////////////
+
+// Function to print an array
+void printArray(int *arr, int size)
 {
-    TChave temp = *xp;
-    *xp = *yp;
-    *yp = temp;
-    couter_movimentacao += 3; // Conta as três operações de movimentação
+    int i;
+    for (i = 0; i < size; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
 }
 
-// Função de ordenação por seleção
-void selectionSort(TChave arr[], int n)
+////////////////
+// ALGORITMO  //
+////////////////
+void Selecao(TItem *A, int n)
 {
-    int i, j, min_idx;
-
-    // Um por um, move a fronteira do subarray não ordenado
-    for (i = 0; i < n - 1; i++)
+    int i, j, Min;
+    TItem aux;
+    for (i = 0; i < n-1; i++)
     {
-        // Encontra o elemento mínimo no array não ordenado
-        min_idx = i;
+        Min = 1;
         for (j = i + 1; j < n; j++)
-        {
-            couter_comparacao++; // Conta a comparação
-            if (arr[j] < arr[min_idx])
-                min_idx = j;
+        {   
+            couter_comparacao++;
+            if (A[j].Chave < A[Min].Chave)
+            {
+                Min = j;
+            }
         }
 
-        // Troca o elemento mínimo encontrado com o primeiro elemento
-        if (min_idx != i)
-            swap(&arr[min_idx], &arr[i]);
+        if (i != Min)
+        {
+            aux = A[Min];
+            A[Min] = A[i];
+            A[i] = aux;
+            couter_movimentacao += 3; 
+        }
     }
 }
 
@@ -50,7 +67,8 @@ int main(int argc, char *argv[])
     clock_t start, end;
     double cpu_time_used;
     int N_array = 0;
-    TChave *point;
+    // TChave *point;
+    int *point;
 
     if (argc < 3)
     {
@@ -63,7 +81,7 @@ int main(int argc, char *argv[])
     N_array = getTamanhoArray(seletor_qtde);
 
     start = clock();
-    selectionSort(point, N_array);
+    Selecao(point, N_array);
     end = clock();
     cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
 
@@ -72,7 +90,6 @@ int main(int argc, char *argv[])
     printf("REGIS=%u", couter_movimentacao);
     fflush(stdout);
 
-    free(point);
 
-    return 0;
+        return 0;
 }
