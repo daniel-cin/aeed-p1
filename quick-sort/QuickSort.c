@@ -12,6 +12,18 @@ typedef int TChave;
 unsigned int couter_comparacao = 0;
 unsigned int couter_movimentacao = 0;
 
+// Function to print an array
+void printArray(TChave *arr, int size)
+{
+    int i;
+    for (i = 0; i < size; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
+
+
 // Utility function to swap two integers
 void swap(TChave *p1, TChave *p2)
 {
@@ -92,7 +104,8 @@ int main(int argc, char *argv[])
     printf("REGIS=%u", couter_movimentacao);
     fflush(stdout);
 
-    free(point);
+    // printArray(point, N_array);
+
 
     return 0;
 }

@@ -6,7 +6,7 @@ import numpy as np
 ################
 # INPUTS
 ################
-N_REPETICOES = 10
+N_REPETICOES = 1
 rodar_algoritmos = [1,2,3,4]
 rodar_listas = [6]
 nome_artefato = "lento"

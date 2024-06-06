@@ -1,0 +1,8 @@
+                | rapido| medio   | lento    |
+ InsertionSort  |OK     |OK       |          |Demora
+ SelectionSort  |OK     |OK       |          |Demora
+ BubbleSort     |OK     |OK       |          |Demora
+ HeapSort       |OK     |OK       |OK        |nao
+ MergeSort      |OK     |OK       |OK        |nao
+ QuickSort      |OK     |OK       |          |Demora
+ Library        |OK     |OK       |          |Demora

@@ -17,6 +17,18 @@ typedef struct
 unsigned int couter_comparacao = 0;
 unsigned int couter_movimentacao = 0;
 
+// Function to print an array
+void printArray(TItem *arr, int size)
+{
+    int i;
+    for (i = 0; i < size; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
+
+
 void mergeSort_intercala(TItem *A, TItem *B, int p, int q, int r)
 {
     int i, j, k;
@@ -117,7 +129,7 @@ int main(int argc, char *argv[])
     printf("REGIS=%u", couter_movimentacao);
     fflush(stdout);
 
-    free(point);
+    // printArray(point, N_array);
 
     return 0;
 }

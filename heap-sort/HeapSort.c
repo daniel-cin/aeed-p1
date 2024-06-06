@@ -12,6 +12,21 @@ typedef int TChave;
 unsigned int couter_comparacao = 0;
 unsigned int couter_movimentacao = 0;
 
+////////////////
+// AUXILIARES //
+////////////////
+
+// Function to print an array
+void printArray(TChave *arr, int size)
+{
+    int i;
+    for (i = 0; i < size; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
+
 // Function to swap the position of two elements
 void swap(TChave *a, TChave *b)
 {
@@ -100,6 +115,7 @@ int main(int argc, char *argv[])
     int seletor_qtde = atoi(argv[2]);
     point = selecionarArray(seletor_modo, seletor_qtde);
     N_array = getTamanhoArray(seletor_qtde);
+    // printArray(point, N_array);
 
     start = clock();
     heapSort(point, N_array);
@@ -111,7 +127,9 @@ int main(int argc, char *argv[])
     printf("REGIS=%u", couter_movimentacao);
     fflush(stdout);
 
-    free(point);
+    // printArray(point, N_array);
+
+    // free(point);
 
     return 0;
 }
