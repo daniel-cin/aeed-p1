@@ -1,0 +1,83 @@
+[33mcommit 5d11f6394d9353b6279025a41619ca14c9c8b81b[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: gChagasGit <chagasgustavo10@gmail.com>
+Date:   Fri Jun 7 09:19:41 2024 -0300
+
+    Geração de resultados: bubble, selection e insertion
+
+[33mcommit d9898364f1a019cf1cf5eeea5354b65eae32bd5a[m
+Author: Daniel Ianni <dsi@cin.ufpe.br>
+Date:   Thu Jun 6 20:27:24 2024 -0300
+
+    Correcao no teste Lento e resultadis parciais
+
+[33mcommit a0d9a0854c519011848cbb1952e5ce0118f962e5[m
+Author: Daniel Ianni <dsi@cin.ufpe.br>
+Date:   Wed Jun 5 22:01:55 2024 -0300
+
+    fix no algo do Selection Sort
+
+[33mcommit 5871d95a7cd9939e647cf0aefb979193f23aadf1[m
+Author: gChagasGit <chagasgustavo10@gmail.com>
+Date:   Wed Jun 5 14:07:30 2024 -0300
+
+    Adicionado todos os algoritmos e arquivos de compilação
+
+[33mcommit 228462fdf85c3f286960927688cb3e3388357057[m
+Author: gChagasGit <chagasgustavo10@gmail.com>
+Date:   Wed Jun 5 14:00:17 2024 -0300
+
+    Adicionado todos os algoritmos
+
+[33mcommit e8b10aba18d3c4341bc9cf48d849b3deeeba2979[m
+Author: Daniel Ianni <dsi@cin.ufpe.br>
+Date:   Tue Jun 4 21:55:42 2024 -0300
+
+    Criado e compilado INSERTION SORT
+
+[33mcommit d17bf1927431a8f5d63350b10abea16d60f40dbe[m
+Author: Daniel Ianni <dsi@cin.ufpe.br>
+Date:   Tue Jun 4 21:53:38 2024 -0300
+
+    fix script Python. Alterado indice p/ teste lento
+
+[33mcommit 428d23927c986714eb879b78de0cc56205c349f9[m
+Author: Daniel Ianni <dsi@cin.ufpe.br>
+Date:   Tue Jun 4 21:48:55 2024 -0300
+
+    criado script python e removido printf de arquivos C
+
+[33mcommit 02f933ed3c1b8e0b94a37c0eb270225abee8e38a[m
+Author: gChagasGit <chagasgustavo10@gmail.com>
+Date:   Mon Jun 3 18:04:48 2024 -0300
+
+    Adicionando LibrarySort
+
+[33mcommit 8f39e0163157bc0dad643ffa0fa3f9fd084b2ae0[m[33m ([m[1;32mwith-library-sort[m[33m)[m
+Author: Daniel Ianni <dsi@cin.ufpe.br>
+Date:   Sun Jun 2 22:58:47 2024 -0300
+
+    finalizado modelo com exemplo Bubblesort
+
+[33mcommit bc3e09a5ea198483b05c0b5dba49de9dc8453e04[m
+Author: Daniel <you@example.com>
+Date:   Sun Jun 2 11:44:54 2024 -0300
+
+    add: exemplo professo Bubblesort
+
+[33mcommit c67e7ebd8ee213b926ea26b19487ca2095ad6d3a[m
+Author: Daniel <you@example.com>
+Date:   Sun Jun 2 00:44:46 2024 -0300
+
+    add: listas geradas
+
+[33mcommit d1efabcfa7c9973fd30a87a61769d48ee71a9970[m
+Author: daniel-cin <132168964+daniel-cin@users.noreply.github.com>
+Date:   Thu May 30 11:52:31 2024 -0300
+
+    Update README.md
+
+[33mcommit db118083cdb84b1802cd1c6dae3c037ddb80aff6[m
+Author: daniel-cin <132168964+daniel-cin@users.noreply.github.com>
+Date:   Wed May 22 20:01:27 2024 -0300
+
+    Initial commit

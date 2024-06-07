@@ -1,0 +1,24 @@
+
+ordenada 1e6  
+TEMPO: 0.007 e std:0.0 
+COMP: 999998.0 e std:0.0 
+REGIS: 0.0 e std:0.0 
+------------------
+
+inversa 1e6  
+TEMPO: 4050.328 e std:0.0 
+COMP: 3564587330.0 e std:0.0 
+REGIS: 1782293665.0 e std:0.0 
+------------------
+
+quase 1e6  
+TEMPO: 232.043 e std:0.0 
+COMP: 2719259816.0 e std:0.0 
+REGIS: 3918247036.0 e std:0.0 
+------------------
+
+aleatoria 1e6  
+TEMPO: 4585.482 e std:0.0 
+COMP: 1993590472.0 e std:0.0 
+REGIS: 1171867916.0 e std:0.0 
+------------------

@@ -1,52 +1,69 @@
 import subprocess
 import os
-from enum import Enum
+import platform
 import numpy as np
 
 ################
 # INPUTS
 ################
 N_REPETICOES = 1
-rodar_algoritmos = [1,2,3,4]
+rodar_algoritmos = [1, 2, 3, 4]
 rodar_listas = [6]
 nome_artefato = "lento"
 nome_exe = "insertion_sort"
-    
 
 ################
 # CONSTANTES
 ################
 raiz = os.path.abspath(os.path.dirname(__file__))
-print(f"{raiz}")
-EXE = os.path.join(raiz, nome_exe)
-print(f"{EXE}")
+print(f"Raiz: {raiz}")
+
+# Verificar o sistema operacional
+sistema_operacional = platform.system()
+if sistema_operacional == "Windows":
+    nome_exe += ".exe"
+    output_dir = os.path.join(raiz, "output")
+    EXE = os.path.join(output_dir, nome_exe)
+else:  # Assumimos que é Linux
+    output_dir = raiz
+    EXE = os.path.join(output_dir, nome_exe)
+
+print(f"Executável: {EXE}")
+
 PATH_RESULTADOS = os.path.join(raiz, "resultados")
 ARQUIVO_FINAL = os.path.join(PATH_RESULTADOS, f'resultado_{nome_artefato}.txt')
-dic_listas = {1: "ordenada",2: "inversa",3: "quase",4: "aleatoria"}
-dic_tamanho = {1: "1e1",2: "1e2",3: "1e3",4: "1e4",5: "1e5",6: "1e6"}
+dic_listas = {1: "ordenada", 2: "inversa", 3: "quase", 4: "aleatoria"}
+dic_tamanho = {1: "1e1", 2: "1e2", 3: "1e3", 4: "1e4", 5: "1e5", 6: "1e6"}
 
+if not os.path.isfile(EXE):
+    raise FileNotFoundError(f"Executável não encontrado: {EXE}")
 
+if not os.path.exists(PATH_RESULTADOS):
+    os.makedirs(PATH_RESULTADOS)
 
 #################
 # RODAR ALGORITMO
 #################
-result_tempo=[]
-result_comp=[]
-result_regis=[]
-print(dic_tamanho[2])
 for algo in rodar_algoritmos:
     for qtde_lista in rodar_listas:
         print(f'RUN: {dic_listas[algo]} com {dic_tamanho[qtde_lista]} itens...')
-        result_tempo=[]
-        result_comp=[]
-        result_regis=[]
+        result_tempo = []
+        result_comp = []
+        result_regis = []
         for _ in range(N_REPETICOES):
-            output = subprocess.getoutput(f'{EXE} {algo} {qtde_lista}')
-            metrica = output.split(';') 
-            result_tempo.append(float(metrica[0].split('=')[1]))
-            result_comp.append(float(metrica[1].split('=')[1]))
-            result_regis.append(float(metrica[2].split('=')[1]))
-            
+            try:
+                # Adicione aspas ao redor do caminho do executável para compatibilidade com Windows
+                comando = f'"{EXE}" {algo} {qtde_lista}'
+                output = subprocess.getoutput(comando)
+                print(f"Output: {output}")  # Adicione este print para ver a saída do executável
+                metrica = output.split(';')
+                result_tempo.append(float(metrica[0].split('=')[1]))
+                result_comp.append(float(metrica[1].split('=')[1]))
+                result_regis.append(float(metrica[2].split('=')[1]))
+            except Exception as e:
+                print(f"Erro ao executar {EXE}: {e}")
+                continue
+
         print("... calcular resultados")
         result_tempo = np.array(result_tempo)
         result_comp = np.array(result_comp)
@@ -54,7 +71,7 @@ for algo in rodar_algoritmos:
 
         tempo_media = np.mean(result_tempo)
         tempo_std = np.std(result_tempo)
-        
+
         comp_media = np.mean(result_comp)
         comp_std = np.std(result_comp)
 
@@ -69,7 +86,3 @@ for algo in rodar_algoritmos:
             myfile.write(f"COMP: {comp_media} e std:{comp_std} \n")
             myfile.write(f"REGIS: {regis_media} e std:{regis_std} \n")
             myfile.write("------------------\n")
-        # print(...)
-
-
-
